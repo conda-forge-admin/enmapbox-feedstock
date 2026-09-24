@@ -9,18 +9,16 @@ Package license: GPL-3.0-only
 
 Summary: Meta-package providing all conda dependencies required to run several versions of the EnMAP-Box QGIS plugin.
 
-
 Development: https://github.com/EnMAP-Box/enmap-box
 
 Documentation: https://enmap-box.readthedocs.io/
 
-This is a conda meta-package that installs the full runtime
+This is a conda meta-package that installs the runtime
 dependency stack defined in the EnMAP-Box conda environment
-files (e.g. enmapbox_full_latest.yml).
+files.
 
 The EnMAP-Box plugin itself is NOT included and must be installed
 via the QGIS Plugin Manager.
-
 
 Current build status
 ====================
@@ -42,7 +40,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-enmapbox-green.svg)](https://anaconda.org/conda-forge/enmapbox) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/enmapbox.svg)](https://anaconda.org/conda-forge/enmapbox) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/enmapbox.svg)](https://anaconda.org/conda-forge/enmapbox) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/enmapbox.svg)](https://anaconda.org/conda-forge/enmapbox) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-enmapbox--base-green.svg)](https://anaconda.org/conda-forge/enmapbox-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/enmapbox-base.svg)](https://anaconda.org/conda-forge/enmapbox-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/enmapbox-base.svg)](https://anaconda.org/conda-forge/enmapbox-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/enmapbox-base.svg)](https://anaconda.org/conda-forge/enmapbox-base) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-enmapbox--lite-green.svg)](https://anaconda.org/conda-forge/enmapbox-lite) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/enmapbox-lite.svg)](https://anaconda.org/conda-forge/enmapbox-lite) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/enmapbox-lite.svg)](https://anaconda.org/conda-forge/enmapbox-lite) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/enmapbox-lite.svg)](https://anaconda.org/conda-forge/enmapbox-lite) |
 
 Installing enmapbox
 ===================
@@ -54,31 +52,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `enmapbox, enmapbox-base` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
-conda install enmapbox enmapbox-base
+conda install enmapbox enmapbox-lite
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
-mamba install enmapbox enmapbox-base
+mamba install enmapbox enmapbox-lite
 ```
 
-It is possible to list all of the versions of `enmapbox` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add enmapbox enmapbox-lite
+# for installing globally
+pixi global install enmapbox enmapbox-lite
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `enmapbox` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search enmapbox --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search enmapbox --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search enmapbox --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -90,6 +130,8 @@ mamba repoquery whoneeds enmapbox --channel conda-forge
 # List dependencies of `enmapbox`:
 mamba repoquery depends enmapbox --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
@@ -160,7 +202,4 @@ Feedstock Maintainers
 
 * [@danschef](https://github.com/danschef/)
 * [@jakimowb](https://github.com/jakimowb/)
-
-
-<!-- dummy commit to enable rerendering -->
 
