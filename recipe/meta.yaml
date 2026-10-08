@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   # -------------------
@@ -18,7 +18,7 @@ outputs:
     requirements:
       run:
         - python >=3.10
-        - qgis >={{ qgis_ltr_version }}
+        - qgis >={{ qgis_ltr_version }},<4
         - colorama
         - defusedxml
         - gdal
